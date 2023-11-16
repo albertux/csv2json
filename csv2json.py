@@ -37,10 +37,10 @@ def main():
                 if '"' in line:
                     line2 = re.sub(r'("[^"]*")', lambda x: x.group(0).replace(',', ';'), line )
                     rows = line2.strip().split(",")
-                    rows = [r.strip('"') for r in rows]
+                    rows = [r.replace('"','') for r in rows]
                 else:
                     rows = line.strip().split(",")
-                    rows = [r.strip('"') for r in rows]
+                    rows = [r.replace('"','') for r in rows]
                 if header:
                     obj_lst.append(dict(map(lambda i,j : (i,j), fields,rows)))
                 else:

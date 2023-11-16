@@ -7,5 +7,8 @@ Examples csv files come from:
   - https://wsform.com/knowledgebase/sample-csv-files
   - https://en.wikipedia.org/wiki/Comma-separated_values
 
-Current issues:
- - need to write unittest
+Notes: 
+  - commas inside quotes are replaced with semicolons
+
+Issues:
+  - need to write unittest
