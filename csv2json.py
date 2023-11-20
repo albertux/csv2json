@@ -9,12 +9,15 @@ def main():
     parser = argparse.ArgumentParser(description="csv2json")
     parser.add_argument('-f', '--file', required=True, help="csv file to parse")
     parser.add_argument('-o', '--output', required=True, help="json file")
-    parser.add_argument('-w', '--with-header', action="store_true", help="csv without header")
+    parser.add_argument('-w', '--with-header', action="store_true", help="csv file with header")
+    parser.add_argument('-p', '--print', action="store_true", help="print json file")
     args = parser.parse_args()
+
 
     input  = args.file
     output = args.output
     header = args.with_header
+    pjson  = args.print
 
     obj_lst = []
 
@@ -57,6 +60,10 @@ def main():
 
     with open(output, 'w') as out_file:
         out_file.write(json.dumps(obj_lst))
+
+    if pjson:
+        with open(output, 'r') as out_file:
+           print(json.dumps(json.load(out_file), indent=2))
 
 if __name__ == "__main__":
     main()

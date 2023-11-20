@@ -7,8 +7,9 @@ Examples csv files come from:
   - https://wsform.com/knowledgebase/sample-csv-files
   - https://en.wikipedia.org/wiki/Comma-separated_values
 
+Test:
+  - python3 -m unittest test_csv2json.py -v
+
 Notes: 
   - commas inside quotes are replaced with semicolons
 
-Issues:
-  - need to write unittest
